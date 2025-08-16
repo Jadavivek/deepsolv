@@ -1,0 +1,31 @@
+from enum import Enum
+class PolicyType(str, Enum):
+    PRIVACY = "privacy"
+    RETURN = "return"
+    REFUND = "refund"
+    TERMS = "terms"
+    SHIPPING = "shipping"
+class ExtractionStatus(str, Enum):
+    SUCCESS = "success"
+    FAILED = "failed"
+    PARTIAL = "partial"
+    IN_PROGRESS = "in_progress"
+class SocialPlatform(str, Enum):
+    INSTAGRAM = "instagram"
+    FACEBOOK = "facebook"
+    TWITTER = "twitter"
+    TIKTOK = "tiktok"
+    YOUTUBE = "youtube"
+    LINKEDIN = "linkedin"
+    PINTEREST = "pinterest"
+class DataPointType(str, Enum):
+    PRODUCT_CATALOG = "product_catalog"
+    HERO_PRODUCTS = "hero_products"
+    PRIVACY_POLICY = "privacy_policy"
+    RETURN_POLICY = "return_policy"
+    REFUND_POLICY = "refund_policy"
+    FAQS = "faqs"
+    SOCIAL_HANDLES = "social_handles"
+    CONTACT_DETAILS = "contact_details"
+    BRAND_CONTEXT = "brand_context"
+    IMPORTANT_LINKS

@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "Shopify Insights API",
+    "description": "API collection for testing Shopify Store Insights Fetcher",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "health"]
+        }
+      }
+    },
+    {
+      "name": "Extract Insights",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://memy.co.in\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/insights/extract",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "insights", "extract"]
+        }
+      }
+    },
+    {
+      "name": "Competitor Analysis",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://memy.co.in\",\n  \"max_competitors\": 3\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/insights/competitors",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "insights", "competitors"]
+        }
+      }
+    },
+    {
+      "name": "Get Extraction History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/insights/history/https://memy.co.in?limit=10",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "insights", "history", "https:", "", "memy.co.in"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Extraction Stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/insights/stats",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "insights", "stats"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ]
+}
